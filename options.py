@@ -11,10 +11,10 @@ class Options():
         parser.add_argument("--labels2idx_file", help="Path to file containing labels2idx mapping", default = 'data/labels2idx.json')
         parser.add_argument("--idx2labels_file", help="Path to file containing idx2labels mapping", default = 'data/idx2labels.json')
         parser.add_argument("--num_labels", help="total number of labels in the dataset (last layer size depends on this)", type=int, default=61)
-        parser.add_argument("--lr", help="learning rate", type=float, default=0.00005)
+        parser.add_argument("--lr", help="learning rate", type=float, default=0.000001)
         parser.add_argument("--momentum", help="Momentum for gradient update", type=float, default=0.9)
         parser.add_argument("--num_epoch", help="Maximum number of epochs", type=int, default=5)
-        parser.add_argument("--model_name", help="Which model backbone to use?", default='resnet18_bb')
+        parser.add_argument("--model_name", help="Which model backbone to use?", default='vanilla')
         return parser
 
     def gather_options(self):

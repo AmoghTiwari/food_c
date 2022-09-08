@@ -2,7 +2,7 @@ import torch.nn as nn
 from torchvision.models.resnet import resnet18
 
 class Resnet18Model(nn.Module):
-    def __init__(self, NUM_LABELS) -> None:
+    def __init__(self, NUM_LABELS):
         super(Resnet18Model, self).__init__()
         self.model = resnet18()
         self.model = self.freeze_layers()

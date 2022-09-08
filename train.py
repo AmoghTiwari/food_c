@@ -53,9 +53,9 @@ if __name__ == "__main__":
 
     dataloader = DataLoader(food_dataset_train, batch_size=args.batch_size, shuffle=True)
     if args.model_name == "resnet18_bb":
-        model = Resnet18Model(args.num_labels)
+        model = Resnet18Model(args)
     elif args.model_name == "vanilla":
-        model = VanillaModel(args.num_labels)
+        model = VanillaModel(args)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=args.lr, momentum=args.momentum)
@@ -69,7 +69,7 @@ if __name__ == "__main__":
             gt_labels = sample['label']
             pred = model(imgs)
             pred_labels=torch.argmax(pred, axis=1)
-            print(f"gt: {gt_labels}, pred:{pred_labels}")
+            # print(f"gt: {gt_labels}, pred:{pred_labels}")
             loss = criterion(pred, gt_labels)
             loss.backward()
             optimizer.step()
