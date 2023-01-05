@@ -1,49 +1,28 @@
-# REFERENCE: https://pytorch.org/tutorials/beginner/data_loading_tutorial.html
-
+import torch
 import numpy as np
 from torch.utils.data import DataLoader
 from dataloader import FoodDatasetTest
 from options import Options
-from models.resnet18_bb_model import Model
-
-""" NOTES
-- Dataloader needs an input of type Dataset
-- To create an instance of type Dataset, we inherit from the in-built dataset class and then override its __getitem__
-and __len__ functions
-- Then we pass this to 
-
-1. Inherit from Dataset class
-2. getitem will take self and idx as input
-
-"""
-""" LAST MODIFIED 
--> 9 Aug 13:21
--> 26 Aug 04:48
--> 26 Aug 22:30
--> 6 Sep 16:32
-"""
-
-""" NEXT STEPS
-    1. Resize all to same size: Done
-    2. Apply transforms
-    3. Write model
-        3.1 Use an available model
-"""
+from models.resnet18_bb_model import Resnet18Model
+from models.vanilla_model import VanillaModel
 
 if __name__ == "__main__":
     args = Options().parse()
-
     target_image_size = (args.target_h, args.target_w)
-    food_dataset_test = FoodDatasetTest(args.dataroot, phase=args.phase, target_image_size=target_image_size)
-
+    food_dataset_test = FoodDatasetTest(args.dataroot, phase=args.phase, target_image_size=target_image_size)    
+    print("phase", args.phase)
     if args.phase != 'test':
         print(f"Mismatch!! argparser has phase={args.phase}, but you are running file test.py")
         print("Exitting ...")
         exit(0)
-
-    dataloader = DataLoader(food_dataset_test, batch_size=1, shuffle=True)
-    model = Model(args.num_labels)
-
+    
+    dataloader = DataLoader(food_dataset_test, batch_size=args.batch_size, shuffle=True)
+    if args.model_name == "resnet18_bb":
+        model = Resnet18Model(args)
+    elif args.model_name == "vanilla":
+        model = VanillaModel(args)
+    model.load_state_dict(torch.load("ckpts/model_5.ckpt"))
+    model.eval()
     num_samples = len(food_dataset_test)
     for idx, sample in enumerate(dataloader):
         img_path = sample['path']

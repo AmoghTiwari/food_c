@@ -7,6 +7,7 @@ class VanillaModel(nn.Module):
         h,w = args.target_h, args.target_w
 
         self.conv1 = nn.Conv2d(3,16,kernel_size=(3,3),padding='same')
+        
         self.relu1 = nn.ReLU()
         self.maxpool1 = nn.MaxPool2d(kernel_size=(2,2))
         h,w = h//2, w//2
@@ -18,6 +19,7 @@ class VanillaModel(nn.Module):
 
         self.fc1 = nn.Linear(in_features=(h*w*64), out_features=args.num_labels)
         self.relu3 = nn.ReLU()
+        self.sigmoid = nn.Sigmoid()
 
     def forward(self, x):
         x = self.conv1(x)
@@ -31,4 +33,6 @@ class VanillaModel(nn.Module):
         x = torch.flatten(x, 1)
         x = self.fc1(x)
         x = self.relu3(x)
+        # x = self.sigmoid(x)
+        # x=torch.softmax(x, axis=1)
         return x

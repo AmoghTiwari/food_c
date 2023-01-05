@@ -1,0 +1,2 @@
+Starting epoch: 1
+Finished epoch: 1, epoch loss: 9456.614782333374, average epoch loss: 1.0143317368157647

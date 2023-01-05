@@ -1,0 +1,575 @@
+==========================================
+SLURM_JOB_ID = 800856
+SLURM_NODELIST = gnode022
+SLURM_JOB_GPUS = 2
+==========================================
++ cd /home/amoghtiwari/personal_projects/food_c_challenge
++ bash initialize.sh
+Copying Data
+Extracting Data
+bash: utils/initialize.sh: No such file or directory
++ echo 'initialized stuff'
+initialized stuff
++ conda init bash
+no change     /home/amoghtiwari/miniconda3/condabin/conda
+no change     /home/amoghtiwari/miniconda3/bin/conda
+no change     /home/amoghtiwari/miniconda3/bin/conda-env
+no change     /home/amoghtiwari/miniconda3/bin/activate
+no change     /home/amoghtiwari/miniconda3/bin/deactivate
+no change     /home/amoghtiwari/miniconda3/etc/profile.d/conda.sh
+no change     /home/amoghtiwari/miniconda3/etc/fish/conf.d/conda.fish
+no change     /home/amoghtiwari/miniconda3/shell/condabin/Conda.psm1
+no change     /home/amoghtiwari/miniconda3/shell/condabin/conda-hook.ps1
+no change     /home/amoghtiwari/miniconda3/lib/python3.9/site-packages/xontrib/conda.xsh
+no change     /home/amoghtiwari/miniconda3/etc/profile.d/conda.csh
+no change     /home/amoghtiwari/.bashrc
+No action taken.
+++ conda shell.bash hook
++ eval 'export CONDA_EXE='\''/home/amoghtiwari/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/home/amoghtiwari/miniconda3/bin/python'\''
+
+# Copyright (C) 2012 Anaconda, Inc
+# SPDX-License-Identifier: BSD-3-Clause
+
+__add_sys_prefix_to_path() {
+    # In dev-mode CONDA_EXE is python.exe and on Windows
+    # it is in a different relative location to condabin.
+    if [ -n "${_CE_CONDA}" ] && [ -n "${WINDIR+x}" ]; then
+        SYSP=$(\dirname "${CONDA_EXE}")
+    else
+        SYSP=$(\dirname "${CONDA_EXE}")
+        SYSP=$(\dirname "${SYSP}")
+    fi
+
+    if [ -n "${WINDIR+x}" ]; then
+        PATH="${SYSP}/bin:${PATH}"
+        PATH="${SYSP}/Scripts:${PATH}"
+        PATH="${SYSP}/Library/bin:${PATH}"
+        PATH="${SYSP}/Library/usr/bin:${PATH}"
+        PATH="${SYSP}/Library/mingw-w64/bin:${PATH}"
+        PATH="${SYSP}:${PATH}"
+    else
+        PATH="${SYSP}/bin:${PATH}"
+    fi
+    \export PATH
+}
+
+__conda_exe() (
+    __add_sys_prefix_to_path
+    "$CONDA_EXE" $_CE_M $_CE_CONDA "$@"
+)
+
+__conda_hashr() {
+    if [ -n "${ZSH_VERSION:+x}" ]; then
+        \rehash
+    elif [ -n "${POSH_VERSION:+x}" ]; then
+        :  # pass
+    else
+        \hash -r
+    fi
+}
+
+__conda_activate() {
+    if [ -n "${CONDA_PS1_BACKUP:+x}" ]; then
+        # Handle transition from shell activated with conda <= 4.3 to a subsequent activation
+        # after conda updated to >= 4.4. See issue #6173.
+        PS1="$CONDA_PS1_BACKUP"
+        \unset CONDA_PS1_BACKUP
+    fi
+    \local ask_conda
+    ask_conda="$(PS1="${PS1:-}" __conda_exe shell.posix "$@")" || \return
+    \eval "$ask_conda"
+    __conda_hashr
+}
+
+__conda_reactivate() {
+    \local ask_conda
+    ask_conda="$(PS1="${PS1:-}" __conda_exe shell.posix reactivate)" || \return
+    \eval "$ask_conda"
+    __conda_hashr
+}
+
+conda() {
+    \local cmd="${1-__missing__}"
+    case "$cmd" in
+        activate|deactivate)
+            __conda_activate "$@"
+            ;;
+        install|update|upgrade|remove|uninstall)
+            __conda_exe "$@" || \return
+            __conda_reactivate
+            ;;
+        *)
+            __conda_exe "$@"
+            ;;
+    esac
+}
+
+if [ -z "${CONDA_SHLVL+x}" ]; then
+    \export CONDA_SHLVL=0
+    # In dev-mode CONDA_EXE is python.exe and on Windows
+    # it is in a different relative location to condabin.
+    if [ -n "${_CE_CONDA:+x}" ] && [ -n "${WINDIR+x}" ]; then
+        PATH="$(\dirname "$CONDA_EXE")/condabin${PATH:+":${PATH}"}"
+    else
+        PATH="$(\dirname "$(\dirname "$CONDA_EXE")")/condabin${PATH:+":${PATH}"}"
+    fi
+    \export PATH
+
+    # We'\''re not allowing PS1 to be unbound. It must at least be set.
+    # However, we'\''re not exporting it, which can cause problems when starting a second shell
+    # via a first shell (i.e. starting zsh from bash).
+    if [ -z "${PS1+x}" ]; then
+        PS1=
+    fi
+fi
+
+conda activate base'
+++ export CONDA_EXE=/home/amoghtiwari/miniconda3/bin/conda
+++ CONDA_EXE=/home/amoghtiwari/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/home/amoghtiwari/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/amoghtiwari/miniconda3/bin/python
+++ '[' -z x ']'
+++ conda activate base
+++ local cmd=activate
+++ case "$cmd" in
+++ __conda_activate activate base
+++ '[' -n '' ']'
+++ local ask_conda
++++ PS1=
++++ __conda_exe shell.posix activate base
++++ __add_sys_prefix_to_path
++++ '[' -n '' ']'
+++++ dirname /home/amoghtiwari/miniconda3/bin/conda
++++ SYSP=/home/amoghtiwari/miniconda3/bin
+++++ dirname /home/amoghtiwari/miniconda3/bin
++++ SYSP=/home/amoghtiwari/miniconda3
++++ '[' -n '' ']'
++++ PATH=/home/amoghtiwari/miniconda3/bin:/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
++++ export PATH
++++ /home/amoghtiwari/miniconda3/bin/conda shell.posix activate base
+++ ask_conda='PS1='\''(base) '\''
+export PATH='\''/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\'''
+++ eval 'PS1='\''(base) '\''
+export PATH='\''/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin'\''
+export CONDA_SHLVL='\''1'\''
+export CONDA_PROMPT_MODIFIER='\''(base) '\'''
++++ PS1='(base) '
++++ export PATH=/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
++++ PATH=/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
++++ export CONDA_SHLVL=1
++++ CONDA_SHLVL=1
++++ export 'CONDA_PROMPT_MODIFIER=(base) '
++++ CONDA_PROMPT_MODIFIER='(base) '
+++ __conda_hashr
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
++ conda activate food_c
++ local cmd=activate
++ case "$cmd" in
++ __conda_activate activate food_c
++ '[' -n '' ']'
++ local ask_conda
+++ PS1='(base) '
+++ __conda_exe shell.posix activate food_c
+++ __add_sys_prefix_to_path
+++ '[' -n '' ']'
++++ dirname /home/amoghtiwari/miniconda3/bin/conda
+++ SYSP=/home/amoghtiwari/miniconda3/bin
++++ dirname /home/amoghtiwari/miniconda3/bin
+++ SYSP=/home/amoghtiwari/miniconda3
+++ '[' -n '' ']'
+++ PATH=/home/amoghtiwari/miniconda3/bin:/bin:/home/amoghtiwari/miniconda3/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
+++ export PATH
+++ /home/amoghtiwari/miniconda3/bin/conda shell.posix activate food_c
++ ask_conda='PS1='\''(food_c) '\''
+export PATH='\''/bin:/home/amoghtiwari/miniconda3/envs/food_c/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin'\''
+export CONDA_PREFIX='\''/home/amoghtiwari/miniconda3/envs/food_c'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''food_c'\''
+export CONDA_PROMPT_MODIFIER='\''(food_c) '\''
+export CONDA_EXE='\''/home/amoghtiwari/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/home/amoghtiwari/miniconda3/bin/python'\''
+export CONDA_PREFIX_1='\''/home/amoghtiwari/miniconda3'\''
+. "/home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libblas_mkl_activate.sh"
+. "/home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libglib_activate.sh"'
++ eval 'PS1='\''(food_c) '\''
+export PATH='\''/bin:/home/amoghtiwari/miniconda3/envs/food_c/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin'\''
+export CONDA_PREFIX='\''/home/amoghtiwari/miniconda3/envs/food_c'\''
+export CONDA_SHLVL='\''2'\''
+export CONDA_DEFAULT_ENV='\''food_c'\''
+export CONDA_PROMPT_MODIFIER='\''(food_c) '\''
+export CONDA_EXE='\''/home/amoghtiwari/miniconda3/bin/conda'\''
+export _CE_M='\'''\''
+export _CE_CONDA='\'''\''
+export CONDA_PYTHON_EXE='\''/home/amoghtiwari/miniconda3/bin/python'\''
+export CONDA_PREFIX_1='\''/home/amoghtiwari/miniconda3'\''
+. "/home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libblas_mkl_activate.sh"
+. "/home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libglib_activate.sh"'
+++ PS1='(food_c) '
+++ export PATH=/bin:/home/amoghtiwari/miniconda3/envs/food_c/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
+++ PATH=/bin:/home/amoghtiwari/miniconda3/envs/food_c/bin:/home/amoghtiwari/miniconda3/condabin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/amoghtiwari/.local/bin:/home/amoghtiwari/bin
+++ export CONDA_PREFIX=/home/amoghtiwari/miniconda3/envs/food_c
+++ CONDA_PREFIX=/home/amoghtiwari/miniconda3/envs/food_c
+++ export CONDA_SHLVL=2
+++ CONDA_SHLVL=2
+++ export CONDA_DEFAULT_ENV=food_c
+++ CONDA_DEFAULT_ENV=food_c
+++ export 'CONDA_PROMPT_MODIFIER=(food_c) '
+++ CONDA_PROMPT_MODIFIER='(food_c) '
+++ export CONDA_EXE=/home/amoghtiwari/miniconda3/bin/conda
+++ CONDA_EXE=/home/amoghtiwari/miniconda3/bin/conda
+++ export _CE_M=
+++ _CE_M=
+++ export _CE_CONDA=
+++ _CE_CONDA=
+++ export CONDA_PYTHON_EXE=/home/amoghtiwari/miniconda3/bin/python
+++ CONDA_PYTHON_EXE=/home/amoghtiwari/miniconda3/bin/python
+++ export CONDA_PREFIX_1=/home/amoghtiwari/miniconda3
+++ CONDA_PREFIX_1=/home/amoghtiwari/miniconda3
+++ . /home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libblas_mkl_activate.sh
++++ export CONDA_MKL_INTERFACE_LAYER_BACKUP=
++++ CONDA_MKL_INTERFACE_LAYER_BACKUP=
++++ export MKL_INTERFACE_LAYER=LP64,GNU
++++ MKL_INTERFACE_LAYER=LP64,GNU
+++ . /home/amoghtiwari/miniconda3/envs/food_c/etc/conda/activate.d/libglib_activate.sh
++++ export GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
++++ export GSETTINGS_SCHEMA_DIR=/home/amoghtiwari/miniconda3/envs/food_c/share/glib-2.0/schemas
++++ GSETTINGS_SCHEMA_DIR=/home/amoghtiwari/miniconda3/envs/food_c/share/glib-2.0/schemas
++ __conda_hashr
++ '[' -n '' ']'
++ '[' -n '' ']'
++ hash -r
++ echo 'Activated conda env'
+Activated conda env
++ python train.py --model vanilla --lr 0.005 --dataroot data/food_c_data
+Using device: cuda
+--------------------------------------------------------
+Printing chosen argument values:
+--------------------------------------------------------
+dataroot: data/food_c_data
+ckpts_dir: ckpts
+batch_size: 4
+phase: train
+target_h: 224
+target_w: 224
+labels2idx_file: data/labels2idx.json
+idx2labels_file: data/idx2labels.json
+num_labels: 62
+lr: 0.005
+momentum: 0.9
+num_epoch: 100
+model_name: vanilla
+--------------------------------------------------------
+Num samples 9323
+Starting epoch: 1
+Finished epoch: 1, epoch loss: 9455.860986828804, average epoch loss: 1.0142508834955277
+Num samples 9323
+Starting epoch: 2
+Finished epoch: 2, epoch loss: 8879.569921851158, average epoch loss: 0.952436975421126
+Num samples 9323
+Starting epoch: 3
+Finished epoch: 3, epoch loss: 8451.74417117238, average epoch loss: 0.9065476961463457
+Num samples 9323
+Starting epoch: 4
+Finished epoch: 4, epoch loss: 7610.578075557947, average epoch loss: 0.8163228655537861
+Num samples 9323
+Starting epoch: 5
+Finished epoch: 5, epoch loss: 6475.60574675817, average epoch loss: 0.6945839050475352
+Num samples 9323
+Starting epoch: 6
+Finished epoch: 6, epoch loss: 5740.919983620747, average epoch loss: 0.6157803264636649
+Num samples 9323
+Starting epoch: 7
+Finished epoch: 7, epoch loss: 5370.03401421293, average epoch loss: 0.5759984998619467
+Num samples 9323
+Starting epoch: 8
+Finished epoch: 8, epoch loss: 4898.81124576698, average epoch loss: 0.5254543865458522
+Num samples 9323
+Starting epoch: 9
+Finished epoch: 9, epoch loss: 4609.818415104643, average epoch loss: 0.49445654994150406
+Num samples 9323
+Starting epoch: 10
+Finished epoch: 10, epoch loss: 4512.255896888866, average epoch loss: 0.4839918370576924
+Num samples 9323
+Starting epoch: 11
+Finished epoch: 11, epoch loss: 4452.1399588416325, average epoch loss: 0.47754370469179797
+Num samples 9323
+Starting epoch: 12
+Finished epoch: 12, epoch loss: 4403.845372817614, average epoch loss: 0.47236354958893206
+Num samples 9323
+Starting epoch: 13
+Finished epoch: 13, epoch loss: 4271.580813755196, average epoch loss: 0.4581766398965135
+Num samples 9323
+Starting epoch: 14
+Finished epoch: 14, epoch loss: 4285.858960027781, average epoch loss: 0.4597081368687956
+Num samples 9323
+Starting epoch: 15
+Finished epoch: 15, epoch loss: 4132.814663712466, average epoch loss: 0.44329235908103254
+Num samples 9323
+Starting epoch: 16
+Finished epoch: 16, epoch loss: 4341.788423070268, average epoch loss: 0.4657072211809791
+Num samples 9323
+Starting epoch: 17
+Finished epoch: 17, epoch loss: 4505.8879975292875, average epoch loss: 0.4833088059132562
+Num samples 9323
+Starting epoch: 18
+Finished epoch: 18, epoch loss: 5311.275275951528, average epoch loss: 0.5696959429316237
+Num samples 9323
+Starting epoch: 19
+Finished epoch: 19, epoch loss: 4847.5069944506795, average epoch loss: 0.5199514098949565
+Num samples 9323
+Starting epoch: 20
+Finished epoch: 20, epoch loss: 4871.7719741858955, average epoch loss: 0.5225541107139221
+Num samples 9323
+Starting epoch: 21
+Finished epoch: 21, epoch loss: 4796.19615147168, average epoch loss: 0.5144477262117001
+Num samples 9323
+Starting epoch: 22
+Finished epoch: 22, epoch loss: 4441.933426673081, average epoch loss: 0.4764489356079675
+Num samples 9323
+Starting epoch: 23
+Finished epoch: 23, epoch loss: 4894.4947859506065, average epoch loss: 0.5249913961118317
+Num samples 9323
+Starting epoch: 24
+Finished epoch: 24, epoch loss: 5611.104780442075, average epoch loss: 0.6018561386294192
+Num samples 9323
+Starting epoch: 25
+Finished epoch: 25, epoch loss: 8099.138221024747, average epoch loss: 0.8687266138608545
+Num samples 9323
+Starting epoch: 26
+Finished epoch: 26, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 27
+Finished epoch: 27, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 28
+Finished epoch: 28, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 29
+Finished epoch: 29, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 30
+Finished epoch: 30, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 31
+Finished epoch: 31, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 32
+Finished epoch: 32, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 33
+Finished epoch: 33, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 34
+Finished epoch: 34, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 35
+Finished epoch: 35, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 36
+Finished epoch: 36, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 37
+Finished epoch: 37, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 38
+Finished epoch: 38, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 39
+Finished epoch: 39, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 40
+Finished epoch: 40, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 41
+Finished epoch: 41, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 42
+Finished epoch: 42, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 43
+Finished epoch: 43, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 44
+Finished epoch: 44, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 45
+Finished epoch: 45, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 46
+Finished epoch: 46, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 47
+Finished epoch: 47, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 48
+Finished epoch: 48, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 49
+Finished epoch: 49, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 50
+Finished epoch: 50, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 51
+Finished epoch: 51, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 52
+Finished epoch: 52, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 53
+Finished epoch: 53, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 54
+Finished epoch: 54, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 55
+Finished epoch: 55, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 56
+Finished epoch: 56, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 57
+Finished epoch: 57, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 58
+Finished epoch: 58, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 59
+Finished epoch: 59, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 60
+Finished epoch: 60, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 61
+Finished epoch: 61, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 62
+Finished epoch: 62, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 63
+Finished epoch: 63, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 64
+Finished epoch: 64, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 65
+Finished epoch: 65, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 66
+Finished epoch: 66, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 67
+Finished epoch: 67, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 68
+Finished epoch: 68, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 69
+Finished epoch: 69, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 70
+Finished epoch: 70, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 71
+Finished epoch: 71, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 72
+Finished epoch: 72, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 73
+Finished epoch: 73, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 74
+Finished epoch: 74, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 75
+Finished epoch: 75, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 76
+Finished epoch: 76, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 77
+Finished epoch: 77, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 78
+Finished epoch: 78, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 79
+Finished epoch: 79, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 80
+Finished epoch: 80, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 81
+Finished epoch: 81, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 82
+Finished epoch: 82, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 83
+Finished epoch: 83, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 84
+Finished epoch: 84, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 85
+Finished epoch: 85, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 86
+Finished epoch: 86, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 87
+Finished epoch: 87, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 88
+Finished epoch: 88, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 89
+Finished epoch: 89, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 90
+Finished epoch: 90, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 91
+Finished epoch: 91, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 92
+Finished epoch: 92, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 93
+Finished epoch: 93, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 94
+Finished epoch: 94, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 95
+Finished epoch: 95, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 96
+Finished epoch: 96, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 97
+Finished epoch: 97, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 98
+Finished epoch: 98, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 99
+Finished epoch: 99, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293
+Num samples 9323
+Starting epoch: 100
+Finished epoch: 100, epoch loss: 9619.318323612213, average epoch loss: 1.0317835807800293

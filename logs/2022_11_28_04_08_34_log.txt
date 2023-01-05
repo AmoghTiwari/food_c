@@ -1,0 +1,200 @@
+Starting epoch: 1
+Finished epoch: 1, epoch loss: 9190.192938804626, average epoch loss: 0.9857549006547921
+Starting epoch: 2
+Finished epoch: 2, epoch loss: 9080.883477687836, average epoch loss: 0.9740301917502774
+Starting epoch: 3
+Finished epoch: 3, epoch loss: 9006.819226861, average epoch loss: 0.966085940883943
+Starting epoch: 4
+Finished epoch: 4, epoch loss: 8908.623129844666, average epoch loss: 0.9555532693172439
+Starting epoch: 5
+Finished epoch: 5, epoch loss: 8810.357464432716, average epoch loss: 0.9450131357323519
+Starting epoch: 6
+Finished epoch: 6, epoch loss: 8739.444423913956, average epoch loss: 0.9374068887604801
+Starting epoch: 7
+Finished epoch: 7, epoch loss: 8697.6201390028, average epoch loss: 0.932920748579084
+Starting epoch: 8
+Finished epoch: 8, epoch loss: 8672.782942414284, average epoch loss: 0.9302566708585523
+Starting epoch: 9
+Finished epoch: 9, epoch loss: 8657.488231182098, average epoch loss: 0.9286161354909469
+Starting epoch: 10
+Finished epoch: 10, epoch loss: 8643.159625172615, average epoch loss: 0.9270792261259911
+Starting epoch: 11
+Finished epoch: 11, epoch loss: 8637.28226339817, average epoch loss: 0.9264488108332265
+Starting epoch: 12
+Finished epoch: 12, epoch loss: 8634.177251815796, average epoch loss: 0.9261157622885119
+Starting epoch: 13
+Finished epoch: 13, epoch loss: 8632.490936636925, average epoch loss: 0.9259348854056554
+Starting epoch: 14
+Finished epoch: 14, epoch loss: 8631.625344276428, average epoch loss: 0.9258420405745391
+Starting epoch: 15
+Finished epoch: 15, epoch loss: 8631.122369766235, average epoch loss: 0.925788090718249
+Starting epoch: 16
+Finished epoch: 16, epoch loss: 8630.878074884415, average epoch loss: 0.9257618872556489
+Starting epoch: 17
+Finished epoch: 17, epoch loss: 8630.702666163445, average epoch loss: 0.925743072633642
+Starting epoch: 18
+Finished epoch: 18, epoch loss: 8637.230571746826, average epoch loss: 0.9264432663034244
+Starting epoch: 19
+Finished epoch: 19, epoch loss: 8638.329671859741, average epoch loss: 0.9265611575522623
+Starting epoch: 20
+Finished epoch: 20, epoch loss: 8633.20535159111, average epoch loss: 0.9260115147046133
+Starting epoch: 21
+Finished epoch: 21, epoch loss: 8629.301339626312, average epoch loss: 0.9255927640916349
+Starting epoch: 22
+Finished epoch: 22, epoch loss: 8628.615822911263, average epoch loss: 0.9255192344643637
+Starting epoch: 23
+Finished epoch: 23, epoch loss: 8628.414226412773, average epoch loss: 0.9254976108991497
+Starting epoch: 24
+Finished epoch: 24, epoch loss: 8628.27247262001, average epoch loss: 0.9254824061589628
+Starting epoch: 25
+Finished epoch: 25, epoch loss: 8628.185591220856, average epoch loss: 0.9254730871201176
+Starting epoch: 26
+Finished epoch: 26, epoch loss: 8628.13914513588, average epoch loss: 0.9254681052382151
+Starting epoch: 27
+Finished epoch: 27, epoch loss: 8628.10665178299, average epoch loss: 0.9254646199488351
+Starting epoch: 28
+Finished epoch: 28, epoch loss: 8628.05327129364, average epoch loss: 0.9254588942715478
+Starting epoch: 29
+Finished epoch: 29, epoch loss: 8628.015168190002, average epoch loss: 0.9254548072712648
+Starting epoch: 30
+Finished epoch: 30, epoch loss: 8627.997181892395, average epoch loss: 0.9254528780320064
+Starting epoch: 31
+Finished epoch: 31, epoch loss: 8627.97891998291, average epoch loss: 0.9254509192301738
+Starting epoch: 32
+Finished epoch: 32, epoch loss: 8627.950291872025, average epoch loss: 0.9254478485328783
+Starting epoch: 33
+Finished epoch: 33, epoch loss: 8627.937313437462, average epoch loss: 0.925446456445078
+Starting epoch: 34
+Finished epoch: 34, epoch loss: 8627.937849760056, average epoch loss: 0.9254465139719034
+Starting epoch: 35
+Finished epoch: 35, epoch loss: 8627.907801270485, average epoch loss: 0.9254432909225019
+Starting epoch: 36
+Finished epoch: 36, epoch loss: 8627.90637922287, average epoch loss: 0.9254431383913837
+Starting epoch: 37
+Finished epoch: 37, epoch loss: 8627.888353705406, average epoch loss: 0.9254412049453401
+Starting epoch: 38
+Finished epoch: 38, epoch loss: 8627.878860116005, average epoch loss: 0.9254401866476462
+Starting epoch: 39
+Finished epoch: 39, epoch loss: 8627.876851201057, average epoch loss: 0.9254399711681923
+Starting epoch: 40
+Finished epoch: 40, epoch loss: 8627.865416646004, average epoch loss: 0.9254387446793955
+Starting epoch: 41
+Finished epoch: 41, epoch loss: 8627.864015579224, average epoch loss: 0.9254385943987153
+Starting epoch: 42
+Finished epoch: 42, epoch loss: 8627.855281829834, average epoch loss: 0.9254376576026851
+Starting epoch: 43
+Finished epoch: 43, epoch loss: 8627.853608489037, average epoch loss: 0.9254374781174554
+Starting epoch: 44
+Finished epoch: 44, epoch loss: 8627.853588819504, average epoch loss: 0.9254374760076696
+Starting epoch: 45
+Finished epoch: 45, epoch loss: 8627.852659702301, average epoch loss: 0.9254373763490615
+Starting epoch: 46
+Finished epoch: 46, epoch loss: 8627.845824360847, average epoch loss: 0.9254366431793251
+Starting epoch: 47
+Finished epoch: 47, epoch loss: 8627.842279672623, average epoch loss: 0.9254362629703553
+Starting epoch: 48
+Finished epoch: 48, epoch loss: 8627.83637559414, average epoch loss: 0.9254356296893853
+Starting epoch: 49
+Finished epoch: 49, epoch loss: 8627.831463217735, average epoch loss: 0.9254351027799781
+Starting epoch: 50
+Finished epoch: 50, epoch loss: 8627.828103661537, average epoch loss: 0.9254347424285677
+Starting epoch: 51
+Finished epoch: 51, epoch loss: 8627.827518701553, average epoch loss: 0.9254346796848175
+Starting epoch: 52
+Finished epoch: 52, epoch loss: 8627.825657844543, average epoch loss: 0.9254344800862966
+Starting epoch: 53
+Finished epoch: 53, epoch loss: 8627.825532078743, average epoch loss: 0.9254344665964542
+Starting epoch: 54
+Finished epoch: 54, epoch loss: 8627.825603246689, average epoch loss: 0.9254344742300428
+Starting epoch: 55
+Finished epoch: 55, epoch loss: 8627.821986556053, average epoch loss: 0.9254340862979784
+Starting epoch: 56
+Finished epoch: 56, epoch loss: 8627.81875526905, average epoch loss: 0.9254337397049287
+Starting epoch: 57
+Finished epoch: 57, epoch loss: 8627.81740784645, average epoch loss: 0.9254335951782099
+Starting epoch: 58
+Finished epoch: 58, epoch loss: 8627.818928956985, average epoch loss: 0.9254337583349764
+Starting epoch: 59
+Finished epoch: 59, epoch loss: 8627.819049715996, average epoch loss: 0.9254337712877825
+Starting epoch: 60
+Finished epoch: 60, epoch loss: 8627.817664027214, average epoch loss: 0.9254336226565713
+Starting epoch: 61
+Finished epoch: 61, epoch loss: 8627.812700271606, average epoch loss: 0.9254330902361478
+Starting epoch: 62
+Finished epoch: 62, epoch loss: 8627.810120821, average epoch loss: 0.9254328135601201
+Starting epoch: 63
+Finished epoch: 63, epoch loss: 8627.810517311096, average epoch loss: 0.9254328560882866
+Starting epoch: 64
+Finished epoch: 64, epoch loss: 8627.80881035328, average epoch loss: 0.9254326729972412
+Starting epoch: 65
+Finished epoch: 65, epoch loss: 8627.808195710182, average epoch loss: 0.9254326070696324
+Starting epoch: 66
+Finished epoch: 66, epoch loss: 8627.806808590889, average epoch loss: 0.9254324582849822
+Starting epoch: 67
+Finished epoch: 67, epoch loss: 8627.805665373802, average epoch loss: 0.9254323356616757
+Starting epoch: 68
+Finished epoch: 68, epoch loss: 8627.805399298668, average epoch loss: 0.9254323071220281
+Starting epoch: 69
+Finished epoch: 69, epoch loss: 8627.805532336235, average epoch loss: 0.9254323213918518
+Starting epoch: 70
+Finished epoch: 70, epoch loss: 8627.803721189499, average epoch loss: 0.9254321271253351
+Starting epoch: 71
+Finished epoch: 71, epoch loss: 8627.804786682129, average epoch loss: 0.9254322414117911
+Starting epoch: 72
+Finished epoch: 72, epoch loss: 8627.805017352104, average epoch loss: 0.9254322661538243
+Starting epoch: 73
+Finished epoch: 73, epoch loss: 8627.801218390465, average epoch loss: 0.9254318586710785
+Starting epoch: 74
+Finished epoch: 74, epoch loss: 8627.802767157555, average epoch loss: 0.9254320247943317
+Starting epoch: 75
+Finished epoch: 75, epoch loss: 8627.80206334591, average epoch loss: 0.9254319493023607
+Starting epoch: 76
+Finished epoch: 76, epoch loss: 8627.802059054375, average epoch loss: 0.9254319488420438
+Starting epoch: 77
+Finished epoch: 77, epoch loss: 8627.801152586937, average epoch loss: 0.9254318516128861
+Starting epoch: 78
+Finished epoch: 78, epoch loss: 8627.80221748352, average epoch loss: 0.9254319658354092
+Starting epoch: 79
+Finished epoch: 79, epoch loss: 8627.800850272179, average epoch loss: 0.925431819186118
+Starting epoch: 80
+Finished epoch: 80, epoch loss: 8627.797628045082, average epoch loss: 0.9254314735648485
+Starting epoch: 81
+Finished epoch: 81, epoch loss: 8627.799441099167, average epoch loss: 0.9254316680359506
+Starting epoch: 82
+Finished epoch: 82, epoch loss: 8627.79786503315, average epoch loss: 0.9254314989845703
+Starting epoch: 83
+Finished epoch: 83, epoch loss: 8627.79850935936, average epoch loss: 0.9254315680960378
+Starting epoch: 84
+Finished epoch: 84, epoch loss: 8627.798412680626, average epoch loss: 0.925431557726121
+Starting epoch: 85
+Finished epoch: 85, epoch loss: 8627.799586057663, average epoch loss: 0.9254316835844324
+Starting epoch: 86
+Finished epoch: 86, epoch loss: 8627.797345399857, average epoch loss: 0.9254314432478662
+Starting epoch: 87
+Finished epoch: 87, epoch loss: 8627.798513293266, average epoch loss: 0.9254315685179949
+Starting epoch: 88
+Finished epoch: 88, epoch loss: 8627.79845058918, average epoch loss: 0.9254315617922536
+Starting epoch: 89
+Finished epoch: 89, epoch loss: 8627.796117305756, average epoch loss: 0.9254313115205144
+Starting epoch: 90
+Finished epoch: 90, epoch loss: 8627.796850919724, average epoch loss: 0.9254313902091305
+Starting epoch: 91
+Finished epoch: 91, epoch loss: 8627.795268058777, average epoch loss: 0.9254312204289152
+Starting epoch: 92
+Finished epoch: 92, epoch loss: 8627.800023794174, average epoch loss: 0.9254317305367558
+Starting epoch: 93
+Finished epoch: 93, epoch loss: 8627.795334339142, average epoch loss: 0.925431227538254
+Starting epoch: 94
+Finished epoch: 94, epoch loss: 8627.795154452324, average epoch loss: 0.925431208243304
+Starting epoch: 95
+Finished epoch: 95, epoch loss: 8627.793506503105, average epoch loss: 0.9254310314816159
+Starting epoch: 96
+Finished epoch: 96, epoch loss: 8627.794621348381, average epoch loss: 0.9254311510617163
+Starting epoch: 97
+Finished epoch: 97, epoch loss: 8627.793582201004, average epoch loss: 0.9254310396010945
+Starting epoch: 98
+Finished epoch: 98, epoch loss: 8627.792155623436, average epoch loss: 0.9254308865840862
+Starting epoch: 99
+Finished epoch: 99, epoch loss: 8627.7926633358, average epoch loss: 0.9254309410421324
+Starting epoch: 100
+Finished epoch: 100, epoch loss: 8627.79167675972, average epoch loss: 0.9254308352203926

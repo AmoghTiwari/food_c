@@ -1,0 +1,13 @@
+dataroot: data/food_c_data
+ckpts_dir: ckpts
+batch_size: 4
+phase: train
+target_h: 224
+target_w: 224
+labels2idx_file: data/labels2idx.json
+idx2labels_file: data/idx2labels.json
+num_labels: 62
+lr: 0.005
+momentum: 0.9
+num_epoch: 100
+model_name: resnet18
